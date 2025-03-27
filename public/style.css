@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+header {
+    background-color: #2980b9;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #2c3e50;
+    padding-top: 3.5rem;
+    padding-bottom: 1rem;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    ;
+
+}
+
+header p {
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.search-input {
+    padding-left: 1rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-radius: 2rem;
+    width: 25rem;
+    border: none;
+}
+
+.search-btn {
+    padding: 0.6rem 0.6rem;
+    border-radius: 2rem;
+    background-color: #2ecc71;
+    border: none;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 5px;
+}
+
+nav {
+    background-color: #3498db;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 3rem;
+
+}
+
+nav a:hover {
+    color: #2ecc71;
+    transition: ease-in 0.1s;
+}
+
+.container1 {
+    border-radius: 3px;
+    border: 1px solid whitesmoke;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-shadow: 0 0 4px 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.container1 h3 {
+    font-size: 3rem;
+    color: #2980b9;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.container1 p {
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+}
+
+.container1 button {
+    font-size: 1.3rem;
+    padding: 1rem 3rem 1rem 3rem;
+    transition: ease-in 0.1s;
+}
+
+.container1 button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(45, 195, 107, 0.3);
+}
+
+main h4 {
+    padding-top: 2rem;
+    padding-left: 2rem;
+}
+
+.btn-u {
+    border-radius: 3rem;
+    padding: 0.5rem 1.2rem 0.5rem 1.2rem;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    margin-left: 3rem;
+}
+
+.btn-u:hover {
+    transition: ease-in-out 0.4s;
+    background-color: orange;
+}
+
+.dropdown {
+    border-radius: 10px;
+    padding: 0.6rem 0.6rem;
+    margin-left: 3rem;
+}
