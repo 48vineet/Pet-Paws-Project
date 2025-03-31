@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const ejs = require('ejs');
 const path = require('path');
+const ejsMate = require('ejs-mate');
 const app = express();
 const port = 8080;
 
 
 app.set('view engine', 'ejs');
-app.set("views", path.join(__dirname, "views"));
+app.set('views', path.join(__dirname, 'views'));
+app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 
 
@@ -21,5 +22,12 @@ async function main() {
 }
 
 
-app.get('/listings', (req, res) => res.render('index.ejs'));
+app.get('/listings', (req, res) => {
+    res.render('listings/index');
+});
+
+app.get('/listings/new', (req, res) => {
+    res.render('listings/new');
+});
+
 app.listen(port, () => console.log(`app listening on port ${port}!`));

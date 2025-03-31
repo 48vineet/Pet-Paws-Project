@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <br>
+        <br>
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">
+                    <h3 style="color: #2ecc71; font-size: 2rem;">Name</h3>
+                </label>
+                <input class="form-control form-control-lg" type="text" placeholder="Please write your name"
+                    aria-label=".form-control-lg example">
+                <div id="emailHelp" class="form-text">
+                    <p style="font-size: 1.3rem; font-weight: bold;">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                    <h3 style="color: #2ecc71; font-size: 2rem;">Password</h3>
+                </label>
+                <input class="form-control form-control-lg" type="password" placeholder="Enter password"
+                    aria-label=".form-control-lg example">
+            </div>
+
+            <div class="mb-3 ">
+                <label for="formFileLg" class="form-label">
+                    <h3 style="color: #2ecc71; font-size: 2rem;">Share your pet image</h3>
+                </label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file">
+            </div>
+
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">
+                    <p style="font-size: 1.3rem; font-weight: bold;">I confirm that i'm selling my pet and follow all
+                        terms and conditons.</p>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-dark add-btn">Submit</button>
+        </form>
+    </body>
