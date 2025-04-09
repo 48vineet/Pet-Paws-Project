@@ -3,31 +3,62 @@
     <body>
         <br>
         <br>
-        <form>
-            <div class="mb-3">
+        <form class="mb-5 mx-auto w-50">
+            <h5 style="color: #0a4f7c; font-size: 2rem; " class="text-center">New Pet </h5>
+
+            <div class="mb-4">
                 <label for="exampleInputEmail1" class="form-label">
-                    <h3 style="color: #2ecc71; font-size: 2rem;">Name</h3>
+                    <h5 style="color: #2980b9; font-size: 2rem;">Name</h5>
                 </label>
                 <input class="form-control form-control-lg" type="text" placeholder="Please write your name"
-                    aria-label=".form-control-lg example">
-                <div id="emailHelp" class="form-text">
-                    <p style="font-size: 1.3rem; font-weight: bold;">We'll never share your email with anyone else.</p>
-                </div>
+                    aria-label="form-control-lg example">
+
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">
-                    <h3 style="color: #2ecc71; font-size: 2rem;">Password</h3>
+                    <h5 style="color: #2980b9; font-size: 2rem;">Description</h5>
                 </label>
-                <input class="form-control form-control-lg" type="password" placeholder="Enter password"
-                    aria-label=".form-control-lg example">
+                <input class="form-control form-control-lg" type="text" placeholder="add your pets description"
+                    aria-label="form-control-lg example">
             </div>
 
-            <div class="mb-3 ">
-                <label for="formFileLg" class="form-label">
-                    <h3 style="color: #2ecc71; font-size: 2rem;">Share your pet image</h3>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Image</h5>
                 </label>
-                <input class="form-control form-control-lg" id="formFileLg" type="file">
+                <input class="form-control form-control-lg" type="text" placeholder="add your pets Image"
+                    aria-label="form-control-lg example">
             </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Price</h5>
+                </label>
+                <input class="form-control form-control-lg" type="text" placeholder="add your pet Price"
+                    aria-label="form-control-lg example">
+            </div>
+
+
+            <label for="exampleInputPassword1" class="form-label">
+                <h5 style="color: #2980b9; font-size: 2rem;">Traits</h5>
+            </label>
+            <div class="dropdown mb-3">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Energetic </a></li>
+                    <li><a class="dropdown-item" href="#">Freindly</a></li>
+                    <li><a class="dropdown-item" href="#">Outdoor</a></li>
+                    <li><a class="dropdown-item" href="#">Playable</a></li>
+                    <li><a class="dropdown-item" href="#">Active</a></li>
+                    <li><a class="dropdown-item" href="#">Agressive</a></li>
+                </ul>
+            </div>
+
+
+
+
 
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">

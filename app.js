@@ -22,12 +22,8 @@ async function main() {
 }
 
 
-app.get('/listings', (req, res) => {
-    res.render('listings/index');
-});
-
-app.get('/listings/new', (req, res) => {
-    res.render('listings/new');
-});
+app.use("/pets", petRouter);
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
+
+
