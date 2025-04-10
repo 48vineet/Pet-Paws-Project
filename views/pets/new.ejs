@@ -1,0 +1,70 @@
+<% layout("/layouts/boilerplate") %>
+
+    <body>
+        <br>
+        <br>
+        <form class="mb-5 mx-auto w-50" method="post" action="/pets/newPet">
+            <h5 style="color: #0a4f7c; font-size: 2rem; " class="text-center">New Pet</h5>
+
+            <div class="mb-4">
+                <label for="exampleInputEmail1" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Name</h5>
+                </label>
+                <input class="form-control form-control-lg" type="text" placeholder="Please write your name"
+                    aria-label="form-control-lg example" name="pet[name]">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Description</h5>
+                </label>
+                <input class="form-control form-control-lg" type="text" placeholder="add your pets description"
+                    aria-label="form-control-lg example" name="pet[description]">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Image</h5>
+                </label>
+                <input class="form-control form-control-lg" type="text" placeholder="add your pets Image"
+                    aria-label="form-control-lg example" name="pet[image]">
+            </div>
+            <div class="mb-3">
+                <label for="pet[price]" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Price</h5>
+                </label>
+                <input class="form-control form-control-lg" type="number" placeholder="add your pet Price"
+                    aria-label="form-control-lg example" name="pet[price]">
+            </div>
+            <div class="mb-3">
+                <label for="pet[breed]" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Breed</h5>
+                </label>
+                <input class="form-control form-control-lg" type="text" placeholder="add your pet Price"
+                    aria-label="form-control-lg example" name="pet[breed]">
+            </div>
+
+
+            <div class="dropdown mb-3">
+                <label for="traits" class="form-label">
+                    <h5 style="color: #2980b9; font-size: 2rem;">Traits</h5>
+                </label>
+                <select class="form-select" id="traits" name="pet[traits]">
+                    <option value="Energetic">Energetic</option>
+                    <option value="Friendly">Friendly</option>
+                    <option value="Outdoor">Outdoor</option>
+                    <option value="Playable">Playable</option>
+                    <option value="Active">Active</option>
+                    <option value="Aggressive">Aggressive</option>
+                </select>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="pet[confirmation]">
+                <label class="form-check-label" for="exampleCheck1">
+                    <p style="font-size: 1.3rem; font-weight: bold;">I confirm that I'm selling my pet and follow all
+                        terms and conditions.</p>
+                </label>
+            </div>
+            <button class="btn btn-dark add-btn">Submit</button>
+        </form>
+    </body>

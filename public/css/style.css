@@ -138,7 +138,7 @@ main h4 {
     position: relative;
 }
 
-.card1 {
+.card {
     border-radius: 20px;
     width: 300px;
     overflow: hidden;
@@ -149,7 +149,7 @@ main h4 {
     padding-bottom: 1rem;
 }
 
-.card1 img {
+.card img {
     width: 100%;
     height: 250px;
     object-fit: cover;
@@ -169,30 +169,32 @@ main h4 {
     background-color: orange;
 }
 
-.card1 p {
+.card p {
     padding-left: 1rem;
     padding-top: 1rem;
 }
 
-.card1 h5 {
+.card h5 {
     font-size: 2rem;
     padding-left: 1rem;
     padding-top: 1rem;
 }
 
-.card1 h5:hover {
+.card h5:hover {
     transition: ease-in 0.4s;
     color: orange;
 }
 
-.card1 a {
+.card,
+.traits,
+.breed {
     border: none;
     background-color: #2980b9;
     color: white;
     border-radius: 1rem;
     text-decoration: none;
     padding: 4px;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
 }
 
 .offers {

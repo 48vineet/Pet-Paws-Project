@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h3>Edit your listing</h3>
+            <form method="post" action="/pets/<%= pet._id %>?_method=PUT" novalidate class="needs-validation">
+
+                <div class="mb-3">
+                    <label for="pet[name]" class="form-label">Name</label>
+                    <input name="pet[name]" value="<%= pet.name %>" class="form-control" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="pet[description]" class="form-label">Description</label>
+                    <textarea name="pet[description]" class="form-control" required><%= pet.description %></textarea>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="pet[image]" class="form-label">Upload New Image</label>
+                    <input name="pet[image]" type="text" class="form-control">
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="pet[price]" class="form-label">Price</label>
+                        <input name="pet[price]" value="<%= pet.price %>" class="form-control" required>
+                    </div>
+                </div>
+                <button class="btn btn-dark edit-btn mt-3">Edit</button>
+            </form>
+        </div>
+    </div>

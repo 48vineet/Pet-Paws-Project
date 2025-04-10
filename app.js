@@ -2,15 +2,20 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
+const methodOverride = require("method-override");
 const app = express();
 const port = 8080;
+// Middleware to parse URL-encoded data
+app.use(express.urlencoded({ extended: true }));
 
+// Middleware to parse JSON data
+app.use(express.json());
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(methodOverride("_method"));
 
 
 
@@ -22,6 +27,16 @@ async function main() {
 }
 
 const petRouter = require("./routes/petRouter");
+const petModel = require("./models/petModel");
+
+app.get("/", async (req, res) => {
+    const allPets = await petModel.find({});
+    res.render("pets/index.ejs", { allPets });
+
+});
+
+
+
 
 app.use("/pets", petRouter);
 

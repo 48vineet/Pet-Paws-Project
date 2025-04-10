@@ -5,7 +5,8 @@ const petSchema = new Schema({
     price: Number,
     image: String,
     description: String,
-    traits: String
+    traits: String,
+    breed: String
 });
 const Pet = mongoose.model("Pet", petSchema);
 module.exports = Pet; 
