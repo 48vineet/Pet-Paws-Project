@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 const app = express();
 const port = 8080;
 // Middleware to parse URL-encoded data
-app.use(express.urlencoded({ extended: true })); 
+app.use(express.urlencoded({ extended: true }));  
 
 // Middleware to parse JSON data
 app.use(express.json());
