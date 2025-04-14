@@ -6,58 +6,13 @@
         <div class="container1">
             <h3>Welcome to Happy Paws!</h3>
             <p>Find your perfect companion today. We ensure every pet finds their forever home.</p>
-            <button class="search-btn">Start Adoption</button>
+            <button class="search-btn"><a href="/pets/ourPet" class="text-decoration-none text-white"> Adopt Pet
+                </a></button>
             <button class="search-btn"><a href="/pets/newPet" class="text-decoration-none text-white"> Post Your Pet
                 </a>
             </button>
         </div>
         <br>
-        <br>
-        <h4><b>Our Pets</b></h4>
-        <br>
-        <div class="button-container">
-            <button class=" btn-u">All</button>
-            <button class=" btn-u">Cats</button>
-            <button class=" btn-u">Dogs</button>
-            <button class=" btn-u">Others</button>
-            <select class="dropdown">
-                <option value="Name">Name</option>
-                <option value="Price">Price</option>
-                <option value="Age">Age</option>
-            </select>
-        </div>
-        <br>
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 gap-3">
-            <% for (let pets of allPets) { %>
-                <div class="card-container row align-items-start">
-                    <div class="card col">
-                        <img src="https://cdn.pixabay.com/photo/2024/06/19/21/54/animal-8840824_640.jpg" alt="dog">
-                        <h5 class="pet-name">
-                            <%= pets.name %>
-                        </h5>
-                        <p class="pet-desc">
-                            <%= pets.description %>
-                        </p>
-                        <a class="pet-traits" href="#">
-                            <%=pets.traits %>
-                        </a>
-                        <a class="pet-breed" href="#">
-                            <%=pets.breed %>
-                        </a>
-
-
-                        <div class="price-adopt">
-                            <div class="pet-price">
-                                $<%= pets.price %>
-                            </div>
-                            <button class="adopt-btn"><a class="adopt-anchor" style="text-decoration: none;"
-                                    href="/pets/<%=pets._id%>">Adopt
-                                    Me</a></button>
-                        </div>
-                    </div>
-                </div>
-                <% } %>
-        </div>
         <br>
         <br>
         <div class="offers">

@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="row">
+        <% for (toy of allToy) { %>
+            <div class="show-container col-4">
+                <div class="show-row">
+                    <div class="show-card-new">
+                        <h2 class="show-title">
+                            <%= toy.name %>
+                        </h2>
+                        <img src="<%= toy.image %>" class="show-img-new" alt="pet image">
+                        <div class="show-card-body">
+                            <h5><strong>Description:</strong>
+                                <%= toy.description %>
+                            </h5>
+                            <h5><strong>Company:</strong>
+                                <%= toy.company %>
+                            </h5>
+                            <h5><strong>Price:</strong> $<%= toy.price %>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>

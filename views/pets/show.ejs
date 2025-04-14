@@ -1,29 +1,32 @@
 <% layout("/layouts/boilerplate") %>
 
-    <div class="row mt-3">
-        <div class="col-8 offset-3">
-        </div>
-        <div class="card col-6 offset-3 show-card listing-card mb-4">
-            <h2 class="pet-name">
-                <%= pet.name %>
-            </h2>
-            <img src="<%=pet.image  %>" class="card-img-top show-img" alt="pet_image">
-            <div class="card-body">
-                <h5 class="card-text">
-                    Description:<%= pet.description %>
-                </h5>
-                <h5 class="card-text">
-                    Price: $<%= pet.price %>
-                </h5>
-                <h5>
-                    Traits: <%= pet.traits %>
-                </h5>
-                <h5 class="card-text">
-                    Breed: <%= pet.breed %>
-                </h5>
-                <a href="/pets/<%=pet._id%>/editPet" class="btn btn-dark edit-btn mb-2 mt-3 ms-3">Edit</a>
-                <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
-                    <button class="btn btn-dark mb-2 mt-3 ms-3">Delete </button>
-                </form>
+    <div class="show-container">
+        <div class="show-row">
+            <div class="show-card-new">
+                <h2 class="show-title">
+                    <%= pet.name %>
+                </h2>
+                <img src="<%= pet.image %>" class="show-img-new" alt="pet image">
+                <div class="show-card-body">
+                    <h5><strong>Description:</strong>
+                        <%= pet.description %>
+                    </h5>
+                    <h5><strong>Price:</strong> $<%= pet.price %>
+                    </h5>
+                    <h5><strong>Traits:</strong>
+                        <%= pet.traits %>
+                    </h5>
+                    <h5><strong>Breed:</strong>
+                        <%= pet.breed %>
+                    </h5>
+
+                    <div class="show-btns">
+                        <a href="/pets/<%= pet._id %>/editPet" class="show-edit-btn">Edit</a>
+                        <form action="/pets/<%= pet._id %>?_method=DELETE" method="POST">
+                            <button class="show-delete-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>

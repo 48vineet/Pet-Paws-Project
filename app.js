@@ -27,7 +27,9 @@ async function main() {
 }
 
 const petRouter = require("./routes/petRouter");
+const foodRouter = require("./routes/foodRouter");
 const petModel = require("./models/petModel");
+const toyRouter = require("./routes/toyRouter");
 
 app.get("/", async (req, res) => {
     const allPets = await petModel.find({});
@@ -35,10 +37,11 @@ app.get("/", async (req, res) => {
 
 });
 
-
-
-
 app.use("/pets", petRouter);
+
+app.use("/foods", foodRouter);
+
+app.use("/toys", toyRouter);
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
 

@@ -1,4 +1,5 @@
 const petModel = require("../models/petModel");
+const foodModel = require("../models/foodModel");
 
 module.exports.renderForm = async (req, res) => {
     res.render("pets/new.ejs");
@@ -7,6 +8,11 @@ module.exports.renderForm = async (req, res) => {
 module.exports.renderPets = async (req, res) => {
     const allPets = await petModel.find({});
     res.render("pets/index.ejs", { allPets });
+};
+
+module.exports.showPets = async (req, res) => {
+    const allPets = await petModel.find({});
+    res.render("pets/ourpets", { allPets });
 };
 
 module.exports.renderPostRoute = async (req, res) => {
@@ -44,5 +50,4 @@ module.exports.renderDeletePet = async (req, res) => {
     const pet = await petModel.findByIdAndDelete(id);
     console.log("pet deleted successfully");
     res.redirect("/");
-
 };
