@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate") %>
+    <div class="row">
+        <% for (utilities of allUtilities) { %>
+            <div class="show-container col-4">
+                <div class="show-row">
+                    <div class="show-card-new">
+                        <h2 class="show-title">
+                            <%= utilities.name %>
+                        </h2>
+                        <img src="<%= utilities.image %>" class="show-img-new" alt="pet image">
+                        <div class="show-card-body">
+                            <h5><strong>Description:</strong>
+                                <%= utilities.description %>
+                            </h5>
+                            <h5><strong>Company:</strong>
+                                <%= utilities.company %>
+                            </h5>
+                            <h5><strong>Price:</strong> $<%= utilities.price %>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </div>

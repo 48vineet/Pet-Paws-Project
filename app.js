@@ -30,6 +30,7 @@ const petRouter = require("./routes/petRouter");
 const foodRouter = require("./routes/foodRouter");
 const petModel = require("./models/petModel");
 const toyRouter = require("./routes/toyRouter");
+const utilitiesRouter = require("./routes/utilitiesRouter");
 
 app.get("/", async (req, res) => {
     const allPets = await petModel.find({});
@@ -42,6 +43,9 @@ app.use("/pets", petRouter);
 app.use("/foods", foodRouter);
 
 app.use("/toys", toyRouter);
+
+app.use("/utilities", utilitiesRouter);
+
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
 
