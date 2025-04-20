@@ -49,5 +49,5 @@ module.exports.renderDeletePet = async (req, res) => {
     let { id } = req.params;
     const pet = await petModel.findByIdAndDelete(id);
     console.log("pet deleted successfully");
-    res.redirect("/");
+    res.redirect("/pets/ourPet");
 };

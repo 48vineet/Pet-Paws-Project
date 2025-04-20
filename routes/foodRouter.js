@@ -5,3 +5,4 @@ const foodController = require("../controllers/foodController");
 router.route("/").get(foodController.foodPageIndex);
 
 module.exports = router;
+

@@ -3,8 +3,13 @@ const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require("method-override");
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const session = require("express-session");
+const User = require('./models/user');
 const app = express();
 const port = 8080;
+
 // Middleware to parse URL-encoded data
 app.use(express.urlencoded({ extended: true }));
 
@@ -17,6 +22,28 @@ app.engine('ejs', ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"));
 
+const petRouter = require("./routes/petRouter");
+const foodRouter = require("./routes/foodRouter");
+const petModel = require("./models/petModel");
+const toyRouter = require("./routes/toyRouter");
+const utilitiesRouter = require("./routes/utilitiesRouter");
+const medicineRouter = require("./routes/medicineRouter");
+const userRouter = require("./routes/userRoute");
+
+const sessionOptions = {
+    secret: "mysupersecretcode",
+    resave: false,
+    saveUninitialized: true,
+};
+
+app.use(session(sessionOptions));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 
 let URL = "mongodb+srv://48vineet:Vineet%40123@airbnb.5tsow.mongodb.net/pets";
@@ -26,11 +53,8 @@ async function main() {
     console.log("Connection Succesfull");
 }
 
-const petRouter = require("./routes/petRouter");
-const foodRouter = require("./routes/foodRouter");
-const petModel = require("./models/petModel");
-const toyRouter = require("./routes/toyRouter");
-const utilitiesRouter = require("./routes/utilitiesRouter");
+
+
 
 app.get("/", async (req, res) => {
     const allPets = await petModel.find({});
@@ -45,6 +69,11 @@ app.use("/foods", foodRouter);
 app.use("/toys", toyRouter);
 
 app.use("/utilities", utilitiesRouter);
+
+app.use("/medicines", medicineRouter);
+
+app.use("/user", userRouter);
+
 
 
 app.listen(port, () => console.log(`app listening on port ${port}!`));
