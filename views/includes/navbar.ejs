@@ -11,7 +11,15 @@
             <li><a class="dropdown-item" href="/utilities">Utilites</a></li>
         </ul>
     </li>
-    <a href="/medicines" class="m-0">Medicines</a>
-    <a href="#about">About</a>
+
+    <a href="/medicines">Medicines</a>
+    <a href=" #about">About</a>
     <a href="#contact">Contact</a>
+    <% if (!currUser) { %>
+        <a class="btn btn-success" href="/user/signup">SignUp</a>
+        <a class="btn btn-success" href="/user/login">Login</a>
+        <% } %>
+            <% if (currUser) { %>
+                <a class="btn btn-success" href="/logout">Logout</a>
+                <% } %>
 </nav>

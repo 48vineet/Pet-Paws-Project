@@ -2,7 +2,10 @@ const petModel = require("../models/petModel");
 const foodModel = require("../models/foodModel");
 
 module.exports.renderForm = async (req, res) => {
-    res.render("pets/new.ejs");
+    if (!req.isAuthenticated()) {
+        res.redirect("/user/login");
+    } else { res.render("pets/new.ejs"); }
+
 };
 
 module.exports.renderPets = async (req, res) => {
@@ -32,22 +35,37 @@ module.exports.renderShowRoute = async (req, res) => {
 
 
 module.exports.renderEditForm = async (req, res) => {
-    let { id } = req.params;
-    const pet = await petModel.findById(id);
-    res.render("pets/edit.ejs", { pet });
+    if (!req.isAuthenticated()) {
+        res.redirect("/user/login");
+    }
+    else {
+        let { id } = req.params;
+        const pet = await petModel.findById(id);
+        res.render("pets/edit.ejs", { pet });
+    }
 };
 
 
 module.exports.renderUpdatePet = async (req, res) => {
-    let { id } = req.params;
-    const pet = await petModel.findById(id);
-    await petModel.findByIdAndUpdate(id, { ...req.body.pet }, { new: true });
-    res.redirect(`/pets/${id}`);
+    if (!req.isAuthenticated()) {
+        res.redirect("/user/login");
+    }
+    else {
+        let { id } = req.params;
+        const pet = await petModel.findById(id);
+        await petModel.findByIdAndUpdate(id, { ...req.body.pet }, { new: true });
+        res.redirect(`/pets/${id}`);
+    }
 };
 
 module.exports.renderDeletePet = async (req, res) => {
-    let { id } = req.params;
-    const pet = await petModel.findByIdAndDelete(id);
-    console.log("pet deleted successfully");
-    res.redirect("/pets/ourPet");
+    if (!req.isAuthenticated()) {
+        res.redirect("/user/login");
+    }
+    else {
+        let { id } = req.params;
+        const pet = await petModel.findByIdAndDelete(id);
+        console.log("pet deleted successfully");
+        res.redirect("/pets/ourPet");
+    }
 };

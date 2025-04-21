@@ -29,6 +29,7 @@ const toyRouter = require("./routes/toyRouter");
 const utilitiesRouter = require("./routes/utilitiesRouter");
 const medicineRouter = require("./routes/medicineRouter");
 const userRouter = require("./routes/userRoute");
+const logoutRouter = require("./routes/logoutRouter");
 
 const sessionOptions = {
     secret: "mysupersecretcode",
@@ -52,6 +53,10 @@ async function main() {
     await mongoose.connect(URL);
     console.log("Connection Succesfull");
 }
+app.use((req, res, next) => {
+    res.locals.currUser = req.user;
+    next();
+});
 
 
 
@@ -73,6 +78,8 @@ app.use("/utilities", utilitiesRouter);
 app.use("/medicines", medicineRouter);
 
 app.use("/user", userRouter);
+
+app.use("/logout", logoutRouter);
 
 
 
