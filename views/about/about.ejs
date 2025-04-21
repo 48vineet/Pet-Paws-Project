@@ -1,0 +1,87 @@
+<% layout("/layouts/boilerplate") %>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About - Paws-Pet</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #ffffff;
+                color: #333;
+            }
+
+            .about-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 60px 20px;
+                background-color: #ffffff;
+                text-align: center;
+            }
+
+            .about-section h2 {
+                font-size: 36px;
+                color: #2980b9;
+                margin-bottom: 20px;
+            }
+
+            .about-section p {
+                max-width: 800px;
+                font-size: 18px;
+                line-height: 1.6;
+            }
+
+            .highlight {
+                color: #2980b9;
+                font-weight: bold;
+            }
+
+            @media (min-width: 768px) {
+                .about-section {
+                    text-align: left;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 40px;
+                }
+
+                .about-text {
+                    max-width: 600px;
+                }
+
+                .about-image img {
+                    max-width: 350px;
+                    width: 100%;
+                    border-radius: 20px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <section class="about-section" id="about">
+            <div class="about-text">
+                <h2>About Paws-Pet</h2>
+                <p>
+                    <strong>Paws-Pet</strong> is your trusted online destination for buying and selling adorable <span
+                        class="highlight">dogs and cats</span>. Whether you're looking to bring home a new furry friend
+                    or
+                    find a loving home for your pet, we've got you covered. Our platform is fully <span
+                        class="highlight">authorized by the government under Act 135</span>, ensuring a legal, ethical,
+                    and
+                    compassionate pet trading experience.
+                    <br><br>
+                    We believe every pet deserves a loving family. Join our community and help us make that a reality —
+                    safely, securely, and responsibly.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="https://th.bing.com/th/id/OIP.4q6ueqf2w7pUAW9aY4jejwHaD4?w=326&h=180&c=7&r=0&o=5&pid=1.7"
+                    alt="Happy Pets">
+            </div>
+        </section>
+
+    </body>

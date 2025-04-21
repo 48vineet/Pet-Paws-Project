@@ -1,0 +1,98 @@
+<% layout("/layouts/boilerplate") %>
+
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact - Paws-Pet</title>
+        <style>
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #ffffff;
+                color: #333;
+            }
+
+            .contact-section {
+                padding: 60px 20px;
+                background-color: #ffffff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-section h2 {
+                font-size: 36px;
+                color: #2980b9;
+                margin-bottom: 20px;
+            }
+
+            .contact-section p {
+                font-size: 18px;
+                margin-bottom: 40px;
+                text-align: center;
+                max-width: 600px;
+            }
+
+            form {
+                width: 100%;
+                max-width: 600px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            input,
+            textarea {
+                padding: 12px 15px;
+                border: 2px solid #ccc;
+                border-radius: 8px;
+                font-size: 16px;
+                transition: border-color 0.3s ease;
+            }
+
+            input:focus,
+            textarea:focus {
+                border-color: #2980b9;
+                outline: none;
+            }
+
+            button {
+                background-color: #2980b9;
+                color: #fff;
+                border: none;
+                padding: 14px;
+                font-size: 18px;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #206ba3;
+            }
+
+            @media (max-width: 600px) {
+                .contact-section h2 {
+                    font-size: 28px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <section class="contact-section" id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to know more about buying or selling a pet? Reach out to our team — we're here to
+                help!</p>
+
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Full Name" required>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </body>

@@ -30,6 +30,8 @@ const utilitiesRouter = require("./routes/utilitiesRouter");
 const medicineRouter = require("./routes/medicineRouter");
 const userRouter = require("./routes/userRoute");
 const logoutRouter = require("./routes/logoutRouter");
+const aboutRoute = require("./routes/aboutRouter");
+const contactRouter = require("./routes/contactRouter");
 
 const sessionOptions = {
     secret: "mysupersecretcode",
@@ -80,6 +82,10 @@ app.use("/medicines", medicineRouter);
 app.use("/user", userRouter);
 
 app.use("/logout", logoutRouter);
+
+app.use("/about", aboutRoute);
+
+app.use("/contact", contactRouter);
 
 
 
