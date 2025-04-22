@@ -31,7 +31,7 @@ header p {
 }
 
 /* ========== NAVBAR ========== */
-nav {
+.nav1 {
     background-color: #3498db;
     padding: 1rem 0;
     position: sticky;
@@ -55,6 +55,8 @@ nav a:hover {
     background-color: transparent;
     margin: 0;
 }
+
+
 
 /* ========== SEARCH ========== */
 .search-input {

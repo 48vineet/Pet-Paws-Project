@@ -1,25 +1,35 @@
-<nav>
-    <a href="/">Home</a>
-    <a href="/pets/ourPet">Our Pets</a>
-    <li class=" dropdown inline">
-        <button class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Accesories
-        </button>
-        <ul class="dropdown-menu dropdown-menu-primary-emphasis">
-            <li><a class="dropdown-item" href="/foods">Foods</a></li>
-            <li><a class="dropdown-item" href="/toys">Toys</a></li>
-            <li><a class="dropdown-item" href="/utilities">Utilites</a></li>
-        </ul>
-    </li>
+<nav class="nav1 px-4">
+    <div class="container-fluid d-flex justify-content-between align-items-center w-100">
+        <!-- Left Links -->
+        <div class="d-flex align-items-center gap-3">
+            <a href="/">Home</a>
+            <a href="/pets/ourPet">Our Pets</a>
 
-    <a href="/medicines">Medicines</a>
-    <a href="/about">About</a>
-    <a href="/contact">Contact</a>
-    <% if (!currUser) { %>
-        <a class="btn btn-success" href="/user/signup">SignUp</a>
-        <a class="btn btn-success" href="/user/login">Login</a>
-        <% } %>
-            <% if (currUser) { %>
-                <a class="btn btn-success" href="/logout">Logout</a>
+            <li class="dropdown inline list-unstyled">
+                <button class="btn text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Accessories
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/foods">Foods</a></li>
+                    <li><a class="dropdown-item" href="/toys">Toys</a></li>
+                    <li><a class="dropdown-item" href="/utilities">Utilities</a></li>
+                </ul>
+            </li>
+
+            <a href="/medicines">Medicines</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+
+        <!-- Right Buttons -->
+        <div class="d-flex gap-2 ms-auto">
+            <% if (!currUser) { %>
+                <a class="btn btn-success" href="/user/signup">SignUp</a>
+                <a class="btn btn-success" href="/user/login">Login</a>
                 <% } %>
+                    <% if (currUser) { %>
+                        <a class="btn btn-success" href="/logout">Logout</a>
+                        <% } %>
+        </div>
+    </div>
 </nav>
