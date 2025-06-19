@@ -4,4 +4,4 @@ const aboutController = require("../controllers/aboutController");
 
 router.route("/").get(aboutController.about);
 
-module.exports = router;
+module.exports = router; 
