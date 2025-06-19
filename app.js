@@ -8,7 +8,7 @@ const LocalStrategy =  require('passport-local');
 const session = require("express-session"); 
 const User = require('./models/user');
 const app = express();
-const port = 8080;
+const port = 8080; 
 
 // Middleware to parse URL-encoded data
 app.use(express.urlencoded({ extended: true }));
