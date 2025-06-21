@@ -8,4 +8,4 @@ router.get("/signup", userController.signUpForm).post("/signup", userController.
 
 router.get("/login", userController.loginForm).post("/login", passport.authenticate("local", { failureRedirect: '/login', failureFlash: true }), userController.login);
 
-module.exports = router;
+module.exports = router; 
