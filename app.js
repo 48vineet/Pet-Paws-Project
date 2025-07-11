@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 const passport = require('passport');
 const LocalStrategy =  require('passport-local');
 const session = require("express-session"); 
-const User = require('./models/user'); 
+const User = require('./models/user');  
 const app = express();
 const port = 8080; 
   
