@@ -66,7 +66,7 @@ app.use((req, res, next) => {
 app.get("/", async (req, res) => {
     const allPets = await petModel.find({});
     res.render("pets/index.ejs", { allPets });
-
+ 
 });
 
 app.use("/pets", petRouter);
