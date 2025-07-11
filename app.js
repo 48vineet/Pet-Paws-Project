@@ -13,7 +13,7 @@ const port = 8080;
 // Middleware to parse URL-encoded data
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware to parse JSON data  
+// Middleware to parse JSON data   
 app.use(express.json());
 
 app.set('view engine', 'ejs');
