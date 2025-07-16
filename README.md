@@ -70,7 +70,7 @@ To set up and run this project locally, follow these steps:
 3.  **Set up MongoDB**:
     Ensure you have a MongoDB instance running or set up a MongoDB Atlas cluster. Update the `URL` variable in `app.js` with your MongoDB connection string.
     The current connection string in `app.js` is:
-    `let URL = "mongodb+srv://48vineet:Vineet%40123@airbnb.5tsow.mongodb.net/pets";`
+    `let URL = "mongodb+srv://48vineet:PASSS@airbnb.5tsow.mongodb.net/pets";`
 4.  **Run the application**:
     ```bash
     node app.js
