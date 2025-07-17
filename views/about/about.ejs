@@ -1,87 +1,215 @@
 <% layout("/layouts/boilerplate") %>
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About - Paws-Pet</title>
-        <style>
-            body {
-                margin: 0;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: #ffffff;
-                color: #333;
-            }
+<!-- Premium About Section with Advanced Effects -->
+<section class="relative bg-gradient-to-br from-white via-emerald-50/30 to-white py-20 px-6 overflow-hidden" id="about">
+  <!-- Floating Background Decorations -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-20 left-10 w-40 h-40 bg-emerald-200/15 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-48 h-48 bg-emerald-300/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-emerald-100/20 rounded-full blur-xl animate-bounce delay-500"></div>
+    <div class="absolute bottom-1/3 right-1/3 w-28 h-28 bg-emerald-200/25 rounded-full blur-lg animate-ping delay-2000"></div>
+  </div>
 
-            .about-section {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 60px 20px;
-                background-color: #ffffff;
-                text-align: center;
-            }
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+      <h2 class="text-4xl md:text-5xl font-extrabold text-emerald-800 mb-4 tracking-tight">About Happy Paws</h2>
+      <div class="w-24 h-1 bg-emerald-600 mx-auto rounded-full transform scale-x-0 animate-scale-x animation-delay-300"></div>
+    </div>
 
-            .about-section h2 {
-                font-size: 36px;
-                color: #2980b9;
-                margin-bottom: 20px;
-            }
+    <!-- Main Content Container -->
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <!-- Text Content -->
+      <div class="lg:max-w-2xl text-center lg:text-left opacity-0 animate-fade-in-left animation-delay-600">
+        <div class="prose prose-lg max-w-none">
+          <p class="text-xl text-gray-700 leading-relaxed mb-6">
+            <strong class="text-emerald-800 font-extrabold">Happy Paws</strong> is your trusted online destination for buying, selling, and adopting 
+            <span class="font-bold text-emerald-700 relative">
+              dogs and cats
+              <span class="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-300 transform scale-x-0 animate-scale-x animation-delay-1200"></span>
+            </span>. Whether you're looking to welcome a new furry companion 
+            or find a caring home for your pet, we're here to help.
+          </p>
+          
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Our platform is <span class="font-bold text-emerald-700 bg-emerald-100 px-2 py-1 rounded">licensed under Government Act 135</span>, ensuring every transaction 
+            is legal, ethical, and compassionate.
+          </p>
+          
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            At <strong class="text-emerald-800 font-extrabold">Happy Paws</strong>, we believe every pet deserves a loving family. 
+            Join our community and help make that a reality—safely, securely, and responsibly.
+          </p>
 
-            .about-section p {
-                max-width: 800px;
-                font-size: 18px;
-                line-height: 1.6;
-            }
+          <!-- Call to Action -->
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a href="/pets/ourPet" class="group relative bg-emerald-700 hover:bg-emerald-800 text-white px-8 py-4 rounded-full font-bold shadow-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-emerald-300 overflow-hidden">
+              <span class="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              <span class="relative z-10 flex items-center gap-3">
+                <span class="transform group-hover:rotate-12 group-hover:scale-125 transition-transform duration-300">🐾</span>
+                Browse Pets
+              </span>
+            </a>
+            <a href="/contact" class="group relative bg-white hover:bg-emerald-50 text-emerald-700 border-2 border-emerald-700 hover:border-emerald-600 px-8 py-4 rounded-full font-bold shadow-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-emerald-300">
+              <span class="flex items-center gap-3">
+                <span class="transform group-hover:rotate-12 group-hover:scale-125 transition-transform duration-300">💬</span>
+                Contact Us
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-            .highlight {
-                color: #2980b9;
-                font-weight: bold;
-            }
-
-            @media (min-width: 768px) {
-                .about-section {
-                    text-align: left;
-                    flex-direction: row;
-                    justify-content: center;
-                    gap: 40px;
-                }
-
-                .about-text {
-                    max-width: 600px;
-                }
-
-                .about-image img {
-                    max-width: 350px;
-                    width: 100%;
-                    border-radius: 20px;
-                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-                }
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <section class="about-section" id="about">
-            <div class="about-text">
-                <h2>About Paws-Pet</h2>
-                <p>
-                    <strong>Paws-Pet</strong> is your trusted online destination for buying and selling adorable <span
-                        class="highlight">dogs and cats</span>. Whether you're looking to bring home a new furry friend
-                    or
-                    find a loving home for your pet, we've got you covered. Our platform is fully <span
-                        class="highlight">authorized by the government under Act 135</span>, ensuring a legal, ethical,
-                    and
-                    compassionate pet trading experience.
-                    <br><br>
-                    We believe every pet deserves a loving family. Join our community and help us make that a reality —
-                    safely, securely, and responsibly.
-                </p>
+      <!-- Enhanced Image Section -->
+      <div class="flex-shrink-0 opacity-0 animate-fade-in-right animation-delay-900">
+        <div class="relative group">
+          <div class="absolute -inset-4 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 bg-gradient-to-br from-emerald-200/30 via-white/20 to-emerald-100/30 blur-xl transition-all duration-700"></div>
+          <img 
+            src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=400" 
+            alt="Happy Pets at Happy Paws"
+            class="relative w-full max-w-lg rounded-3xl shadow-2xl transition-all duration-700 group-hover:scale-105 group-hover:shadow-3xl"
+          />
+          <!-- Floating Stats -->
+          <div class="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-xl transform opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 delay-200">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-emerald-700">1000+</div>
+              <div class="text-sm text-gray-600">Happy Families</div>
             </div>
-            <div class="about-image">
-                <img src="https://th.bing.com/th/id/OIP.4q6ueqf2w7pUAW9aY4jejwHaD4?w=326&h=180&c=7&r=0&o=5&pid=1.7"
-                    alt="Happy Pets">
+          </div>
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-xl transform opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 delay-400">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-emerald-700">24/7</div>
+              <div class="text-sm text-gray-600">Support</div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </body>
+    <!-- Trust Indicators -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center opacity-0 animate-fade-in-up animation-delay-1500">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">🏛️</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2">Government Licensed</h4>
+        <p class="text-gray-600 text-sm">Authorized under Act 135 for legal, ethical pet transactions</p>
+      </div>
+      
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center opacity-0 animate-fade-in-up animation-delay-1800">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">🛡️</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2">Safe & Secure</h4>
+        <p class="text-gray-600 text-sm">Verified sellers and secure payment processing</p>
+      </div>
+      
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-center opacity-0 animate-fade-in-up animation-delay-2100">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">❤️</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2">Compassionate Care</h4>
+        <p class="text-gray-600 text-sm">Every pet deserves love, care, and a forever home</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom CSS for Premium Effects -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes scale-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-left {
+    animation: fade-in-left 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-right {
+    animation: fade-in-right 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-x {
+    animation: scale-x 0.6s ease-out forwards;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  
+  .animation-delay-900 {
+    animation-delay: 0.9s;
+  }
+  
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  
+  .animation-delay-1800 {
+    animation-delay: 1.8s;
+  }
+  
+  .animation-delay-2100 {
+    animation-delay: 2.1s;
+  }
+  
+  /* Enhanced shadow effects */
+  .hover\:shadow-3xl:hover {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Glass morphism effect */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+</style>

@@ -1,25 +1,166 @@
 <% layout("/layouts/boilerplate") %>
-    <div class="row">
-        <% for (food of allFood) { %>
-            <div class="show-container col-4">
-                <div class="show-row">
-                    <div class="show-card-new">
-                        <h2 class="show-title">
-                            <%= food.name %>
-                        </h2>
-                        <img src="<%= food.image %>" class="show-img-new" alt="pet image">
-                        <div class="show-card-body">
-                            <h5><strong>Description:</strong>
-                                <%= food.description %>
-                            </h5>
-                            <h5><strong>Company:</strong>
-                                <%= food.company %>
-                            </h5>
-                            <h5><strong>Price:</strong> $<%= food.price %>
-                            </h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <% } %>
+
+<!-- Premium Pet Food Cards with Advanced Effects -->
+<section class="relative py-16 px-4 bg-gradient-to-br from-white via-emerald-50/20 to-white overflow-hidden">
+  <!-- Floating Background Decorations -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-emerald-200/15 rounded-full blur-2xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-40 h-40 bg-emerald-300/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-emerald-100/20 rounded-full blur-xl animate-bounce delay-500"></div>
+    <div class="absolute bottom-1/3 right-1/3 w-20 h-20 bg-emerald-200/20 rounded-full blur-lg animate-ping delay-2000"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-12 opacity-0 animate-fade-in-up">
+      <h2 class="text-4xl font-extrabold text-emerald-800 mb-4 tracking-tight">Premium Pet Foods</h2>
+      <div class="w-24 h-1 bg-emerald-600 mx-auto rounded-full transform scale-x-0 animate-scale-x animation-delay-300"></div>
+      <p class="text-lg text-gray-600 mt-6 opacity-0 animate-fade-in-up animation-delay-600">Nutritious and delicious meals for your furry friends</p>
     </div>
+
+    <!-- Food Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% for (food of allFood) { %>
+        <div class="group bg-white rounded-3xl shadow-xl border border-emerald-100 hover:border-emerald-300 transition-all duration-500 transform hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in-up" style="animation-delay: <%= Math.random() * 0.5 + 0.3 %>s;">
+          <!-- Card Glow Effect -->
+          <div class="absolute -inset-2 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-100 bg-gradient-to-br from-emerald-200/30 via-white/20 to-emerald-100/30 blur-xl transition-all duration-700"></div>
+          
+          <div class="relative p-6">
+            <!-- Food Name with Enhanced Typography -->
+            <h2 class="text-2xl font-bold text-emerald-700 mb-4 group-hover:text-emerald-600 transition-colors duration-300 tracking-tight">
+              <%= food.name %>
+            </h2>
+
+            <!-- Image Container with Hover Effects -->
+            <div class="relative mb-6 overflow-hidden rounded-2xl bg-emerald-50 group-hover:bg-emerald-100 transition-colors duration-300">
+              <img
+                src="<%= food.image %>"
+                alt="<%= food.name %>"
+                class="w-full h-48 object-contain p-2 rounded-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-1"
+                loading="lazy"
+              />
+              <!-- Floating Quality Badge -->
+              <div class="absolute top-4 right-4 bg-emerald-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-200">
+                <span class="animate-pulse">🌟</span> Premium
+              </div>
+            </div>
+
+            <!-- Food Details -->
+            <div class="space-y-3 mb-6">
+              <p class="text-gray-700 group-hover:text-gray-800 transition-colors duration-300">
+                <span class="font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">Description:</span> 
+                <%= food.description %>
+              </p>
+              <p class="text-gray-700 group-hover:text-gray-800 transition-colors duration-300">
+                <span class="font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">Company:</span> 
+                <%= food.company %>
+              </p>
+              <p class="text-gray-700 group-hover:text-gray-800 transition-colors duration-300">
+                <span class="font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">Price:</span> 
+                <span class="text-xl font-bold text-emerald-700">$<%= food.price %></span>
+              </p>
+            </div>
+
+            <!-- Premium Add to Cart Button -->
+            <button class="group/btn relative w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-bold shadow-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-emerald-300 overflow-hidden">
+              <span class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
+              <span class="relative z-10 flex items-center justify-center gap-3">
+                <span class="transform group-hover/btn:rotate-12 group-hover/btn:scale-125 transition-transform duration-300">🛒</span>
+                Add to Cart
+                <span class="transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
+              </span>
+            </button>
+          </div>
+        </div>
+      <% } %>
+    </div>
+
+    <!-- Quality Assurance Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up animation-delay-1200">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">🥗</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2 text-center">Natural Ingredients</h4>
+        <p class="text-gray-600 text-sm text-center">Premium quality foods made with natural, healthy ingredients</p>
+      </div>
+      
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up animation-delay-1500">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">🏆</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2 text-center">Vet Approved</h4>
+        <p class="text-gray-600 text-sm text-center">All products are veterinarian recommended and tested</p>
+      </div>
+      
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up animation-delay-1800">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">❤️</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2 text-center">Made with Love</h4>
+        <p class="text-gray-600 text-sm text-center">Crafted with care for your pet's health and happiness</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom CSS for Premium Effects -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-x {
+    animation: scale-x 0.6s ease-out forwards;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  
+  .animation-delay-1800 {
+    animation-delay: 1.8s;
+  }
+  
+  /* Enhanced shadow effects */
+  .hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Glass morphism effect */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+</style>

@@ -1,16 +1,151 @@
 <% layout("/layouts/boilerplate") %>
 
-    <br>
-    <br>
-    <div class="container1">
-        <h3>Welcome to Happy Paws!</h3>
-        <p>Find your perfect companion today. We ensure every pet finds their forever home.</p>
-        <button class="search-btn"><a href="/medicines/allMedicine" class="text-decoration-none text-white"> Buy
-                Medicines
-            </a></button>
-        <button class="search-btn"><a href="/pets/newPet" class="text-decoration-none text-white"> Consult Doctor
-            </a>
-        </button>
+<!-- Premium Welcome Section with Advanced Effects -->
+<section class="relative py-24 bg-gradient-to-br from-white via-emerald-50/30 to-white overflow-hidden">
+  <!-- Floating Background Decorations -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-emerald-200/20 rounded-full blur-2xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-40 h-40 bg-emerald-300/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-emerald-100/30 rounded-full blur-xl animate-bounce delay-500"></div>
+    <div class="absolute bottom-1/3 right-1/3 w-28 h-28 bg-emerald-200/25 rounded-full blur-lg animate-ping delay-2000"></div>
+  </div>
+
+  <!-- Main Content Container -->
+  <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+    <!-- Animated Welcome Header -->
+    <div class="mb-12 opacity-0 animate-fade-in-up">
+      <h3 class="text-4xl md:text-5xl font-extrabold text-emerald-800 mb-4 tracking-tight">
+        Welcome to <span class="bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">Happy Paws!</span>
+      </h3>
+      <div class="w-24 h-1 bg-emerald-600 mx-auto rounded-full transform scale-x-0 animate-scale-x animation-delay-300"></div>
     </div>
-    <br>
-    <br>
+
+    <!-- Enhanced Description -->
+    <p class="text-xl md:text-2xl text-gray-700 mb-12 leading-relaxed max-w-2xl mx-auto opacity-0 animate-fade-in-up animation-delay-600">
+      Find your perfect companion today. We ensure every pet finds their forever home with love, care, and endless joy.
+    </p>
+
+    <!-- Premium Action Buttons -->
+    <div class="flex justify-center gap-6 flex-wrap opacity-0 animate-fade-in-up animation-delay-900">
+      <a
+        href="/medicines/allMedicine"
+        class="group relative bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-2xl focus:ring-4 focus:ring-emerald-300 focus:outline-none overflow-hidden"
+      >
+        <span class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+        <span class="relative z-10 flex items-center gap-3">
+          <span class="transform group-hover:rotate-12 group-hover:scale-125 transition-transform duration-300">💊</span>
+          Buy Medicines
+        </span>
+      </a>
+      
+      <a
+        href="/pets/newPet"
+        class="group relative bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-4 rounded-full text-lg font-bold shadow-xl transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-2xl focus:ring-4 focus:ring-emerald-300 focus:outline-none overflow-hidden"
+      >
+        <span class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+        <span class="relative z-10 flex items-center gap-3">
+          <span class="transform group-hover:rotate-12 group-hover:scale-125 transition-transform duration-300">🩺</span>
+          Consult Doctor
+        </span>
+      </a>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up animation-delay-1200">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">🏥</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2">Health First</h4>
+        <p class="text-gray-600 text-sm">Professional veterinary care for your beloved companions</p>
+      </div>
+      
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up animation-delay-1500">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">❤️</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2">Love & Care</h4>
+        <p class="text-gray-600 text-sm">Every pet deserves a loving home and compassionate care</p>
+      </div>
+      
+      <div class="group bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 opacity-0 animate-fade-in-up animation-delay-1800">
+        <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300 mx-auto">
+          <span class="text-emerald-600 text-2xl group-hover:scale-125 transition-transform duration-300">🏠</span>
+        </div>
+        <h4 class="text-lg font-bold text-emerald-800 mb-2">Forever Homes</h4>
+        <p class="text-gray-600 text-sm">Connecting pets with families for lifelong happiness</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom CSS for Premium Effects -->
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scale-x {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-x {
+    animation: scale-x 0.6s ease-out forwards;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+  
+  .animation-delay-900 {
+    animation-delay: 0.9s;
+  }
+  
+  .animation-delay-1200 {
+    animation-delay: 1.2s;
+  }
+  
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+  
+  .animation-delay-1800 {
+    animation-delay: 1.8s;
+  }
+  
+  /* Glass morphism effect */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(8px);
+  }
+  
+  /* Enhanced shadow effects */
+  .hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* Custom gradient text */
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+</style>

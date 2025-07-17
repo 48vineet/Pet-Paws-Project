@@ -1,65 +1,86 @@
 <% layout("/layouts/boilerplate") %>
 
-    <br>
-    <br>
-    <h4><b>Our Pets</b></h4>
-    <br>
-    <div class="button-container">
-        <button class=" btn-u">All</button>
-        <button class=" btn-u">Cats</button>
-        <button class=" btn-u">Dogs</button>
-        <button class=" btn-u">Others</button>
-        <select class="dropdown">
-            <option value="Name">Name</option>
-            <option value="Price">Price</option>
-            <option value="Age">Age</option>
-        </select>
+<!-- Our Pets Section with Advanced Card Effects & Interactivity -->
+<section class="py-14 px-4 max-w-7xl mx-auto bg-white rounded-3xl shadow-2xl relative overflow-visible">
+  <!-- Heading -->
+  <h2 class="text-4xl font-extrabold text-center text-emerald-800 mb-10 tracking-tight animate-fade-in-up">Meet Our Pets</h2>
+
+  <!-- Filter & Sort Toolbar with Enhanced Effects -->
+  <div class="flex flex-wrap justify-center gap-4 mb-14">
+    <button class="group px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-bold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-100 focus:ring-4 focus:ring-emerald-200 border-2 border-transparent hover:border-emerald-700 relative overflow-hidden">
+      <span class="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300"><span class="opacity-80 group-hover:opacity-100 transition">🐾</span>All Pets</span>
+      <span class="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-10 bg-white transition-opacity duration-500 rounded-full"></span>
+    </button>
+    <button class="group px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-bold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-100 focus:ring-4 focus:ring-emerald-200 border-2 border-transparent hover:border-emerald-700 relative overflow-hidden">
+      <span class="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">🐱 Cats</span>
+      <span class="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-10 bg-white transition-opacity duration-500 rounded-full"></span>
+    </button>
+    <button class="group px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-bold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-100 focus:ring-4 focus:ring-emerald-200 border-2 border-transparent hover:border-emerald-700 relative overflow-hidden">
+      <span class="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">🐶 Dogs</span>
+      <span class="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-10 bg-white transition-opacity duration-500 rounded-full"></span>
+    </button>
+    <button class="group px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-bold shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 active:scale-100 focus:ring-4 focus:ring-emerald-200 border-2 border-transparent hover:border-emerald-700 relative overflow-hidden">
+      <span class="relative z-10 flex items-center gap-2 group-hover:gap-3 transition-all duration-300">🦜 Others</span>
+      <span class="absolute left-0 top-0 w-full h-full opacity-0 group-hover:opacity-10 bg-white transition-opacity duration-500 rounded-full"></span>
+    </button>
+    <!-- Animated Sort Dropdown -->
+    <div class="relative group">
+      <select class="px-5 py-3 border border-emerald-200 bg-white text-emerald-800 rounded-full font-bold focus:ring-2 focus:ring-emerald-300 transition-all duration-300 hover:bg-emerald-50 focus:bg-emerald-50 shadow group-hover:scale-105 active:scale-95">
+        <option value="Name">Name</option>
+        <option value="Price">Price</option>
+        <option value="Age">Age</option>
+      </select>
+      <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 px-4 py-2 bg-white text-emerald-800 rounded-full text-xs font-bold shadow opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-10">
+        Sort By
+      </div>
     </div>
-    <br>
+  </div>
 
+  <!-- Pet Cards Grid with Advanced Interactivity -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+    <% for (let pet of allPets) { %>
+      <a href="/pets/<%= pet._id %>"
+         class="group block bg-white rounded-3xl shadow-xl border border-emerald-100 hover:border-emerald-300 transition-all duration-500 ease-in-out 
+         transform hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.025] relative overflow-hidden animate-fade-in-up hover:z-20">
+        <!-- Animated Card Glow -->
+        <div class="absolute -inset-2 rounded-3xl pointer-events-none opacity-0 group-hover:opacity-90 bg-gradient-to-br from-emerald-100 via-white to-transparent blur-md transition-all duration-500"></div>
+        <img src="<%= pet.image %>"
+          alt="<%= pet.name %>"
+          class="w-full h-64 object-cover rounded-t-3xl border-b border-emerald-100 group-hover:scale-110 group-hover:rotate-2 transition-all duration-500 ease-in-out shadow-lg group-hover:shadow-2xl" />
+        <div class="p-6 transition-all duration-300">
+          <h3 class="text-2xl font-bold text-emerald-800 mb-2 group-hover:text-emerald-600 transition-colors duration-300 drop-shadow-sm"><%= pet.name %></h3>
+          <p class="text-gray-700 mb-4 text-base leading-relaxed group-hover:text-gray-800 transition-colors duration-300"><%= pet.description %></p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-medium transition-colors group-hover:bg-emerald-200 shadow-sm tracking-wide">
+              <%= pet.traits %>
+            </span>
+            <span class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-medium transition-colors group-hover:bg-emerald-200 shadow-sm tracking-wide">
+              <%= pet.breed %>
+            </span>
+          </div>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-xl font-bold text-emerald-700 drop-shadow">$<%= pet.price %></span>
+            <span class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-900 text-white px-5 py-2 rounded-full text-base font-bold shadow-lg transition-all duration-300 transform hover:scale-110 active:scale-95 focus:ring-2 focus:ring-emerald-400 cursor-pointer select-none group-hover:-rotate-3">
+              <span class="transition-transform duration-300 group-hover:scale-125">✨</span> Adopt Me
+            </span>
+          </div>
+        </div>
+        <!-- Subtle floating badge on hover -->
+        <div class="absolute top-5 right-6 bg-white shadow-md px-3 py-1 rounded-full text-emerald-700 text-xs font-bold opacity-0 group-hover:opacity-90 transition-all duration-500 z-10">
+          <span>View Details</span>
+        </div>
+      </a>
+    <% } %>
+  </div>
+</section>
 
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 mt-3rs">
-
-        <% for (let pets of allPets) { %>
-            <div class="card-container">
-                <div class="card">
-                    <img src="<%= pets.image %>" alt="pet image">
-                    <h5 class="pet-name">
-                        <%= pets.name %>
-                    </h5>
-                    <p class="pet-desc">
-                        <%= pets.description %>
-                    </p>
-                    <div class="traits-breed">
-                        <a class="pet-traits" href="#">
-                            <%= pets.traits %>
-                        </a>
-                        <a class="pet-traits" href="#">
-                            <%= pets.traits %>
-                        </a>
-                        <a class="pet-traits" href="#">
-                            <%= pets.traits %>
-                        </a>
-                        <a class="pet-traits" href="#">
-                            <%= pets.traits %>
-                        </a>
-                        <a class="pet-breed" href="#">
-                            <%= pets.breed %>
-                        </a>
-                    </div>
-
-
-                    <div class="price-adopt">
-                        <div class="pet-price">$<%= pets.price %>
-                        </div>
-                        <button class="adopt-btn">
-                            <a class="adopt-anchor" href="/pets/<%= pets._id %>">Adopt Me</a>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <% } %>
-    </div>
-    <br>
-    <br>
+<!-- Custom CSS for Entrance Animation -->
+<style>
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.7s cubic-bezier(.28,.84,.42,1) both;
+  }
+</style>
