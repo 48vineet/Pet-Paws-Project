@@ -58,7 +58,7 @@ async function main() {
 app.use((req, res, next) => {
     res.locals.currUser = req.user;
     next();
-});
+}); 
 
 
 
@@ -78,7 +78,7 @@ app.use("/toys", toyRouter);
 app.use("/utilities", utilitiesRouter);
 
 app.use("/medicines", medicineRouter);
-
+ 
 app.use("/user", userRouter);
 
 app.use("/logout", logoutRouter);
